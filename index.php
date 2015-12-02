@@ -1,1 +1,1 @@
-<?php echo file_get_contents('https://app44510541.auth0.com/login?client=reA0WRFM7JzaBJreRgRvuq5yzt9CdOId'); ?>
+<?php echo file_get_contents('index.html'); ?>
