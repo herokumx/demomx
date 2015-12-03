@@ -1,10 +1,25 @@
+<?php 
 
-
-<?php
-$database = "d31r0cgdueumjf";
-$username = "uqphasfcijtgrg";
+$host = "ec2-107-20-223-116.compute-1.amazonaws.com";
+$port = "5432";
+$dbname = "d31r0cgdueumjf";
+$user = "uqphasfcijtgrg";
 $password = "lCwnoVxA3zJgIhomgB6mq9Xsqt";
-$db = new PDO("mysql:host=ec2-107-20-223-116.compute-1.amazonaws.com;dbname=".$database , $username, $password);
+$pg_options = "--client_encoding=UTF8";
+
+$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} options='{$pg_options}'";
+$db = pg_connect($connection_string);
+
+
+if($db){
+    echo "Connected to ". pg_host($dbconn); 
+}else{
+    echo "Error in connecting to database.";
+}
+
+echo "<br />";
+
+
 $statement = $db->prepare("SELECT * FROM questions");
 $statement->execute( array(18) );
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -110,7 +125,4 @@ RANDOM
             return $re;
         }
     }
-?>
-
-
 ?>
