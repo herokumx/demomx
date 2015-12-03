@@ -18,4 +18,16 @@ if($dbconn){
 }
 
 echo "<br />";
+
+$result = pg_query($dbconn, "SELECT * FROM answers");
+if (!$result) {
+    echo "An error occurred.\n";
+    exit;
+}
+
+$arr = pg_fetch_all($result);
+
+echo "<pre>";
+print_r($arr);
+echo "</pre>";
 ?>
