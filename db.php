@@ -19,17 +19,17 @@ if($dbconn){
 
 echo "<br />";
 
+require_once 'index.php';
+
 $result = pg_query($dbconn, "SELECT * FROM users");
 if (!$result) {
     echo "An error occurred.\n";
     exit;
 }
 
+$arr = pg_fetch_all($result);
 
-echo "Fetch row: <br>";
-
-
-while ($row = pg_fetch_row($result)) {
- print_r($row[1]);
-}
+echo "<pre>";
+print_r($arr);
+echo "</pre>";
 ?>
