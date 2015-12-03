@@ -7,7 +7,7 @@ $user = "uqphasfcijtgrg";
 $password = "lCwnoVxA3zJgIhomgB6mq9Xsqt";
 $pg_options = "--client_encoding=UTF8";
 
-$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ssl=true sslfactory=org.postgresql.ssl.NonValidatingFactory options='{$pg_options}'";
+$connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} options='{$pg_options}'";
 $dbconn = pg_connect($connection_string);
 
 
